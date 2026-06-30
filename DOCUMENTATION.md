@@ -6,17 +6,23 @@ Solvuno is an AI-powered civic reporting platform designed to bridge the gap bet
 
 ---
 
-## 🚀 The Problem
+# The Problem
 Cities suffer from deteriorating infrastructure—potholes, broken streetlights, illegal dumping, and damaged public utilities. Traditional reporting systems (like 311 or government portals) are often outdated, lack transparency, and are riddled with spam or duplicate reports. Residents feel ignored, and municipal workers are overwhelmed by unverified data.
 
-## 💡 Our Solution
+#💡 Our Solution
 Solvuno modernizes civic engagement by combining crowd-sourced reporting with intelligent verification. 
 
 ### Key Features
 * 🛡️ **AI Spam Shield (Gemini API)**: Every issue submitted is instantly analyzed by Google's Gemini AI. The AI evaluates the description and imagery to verify authenticity, actively blocking spam, offensive content, or duplicate reports before they ever reach the database.
 * 📍 **Live Interactive Map (Google Maps)**: A sleek, real-time map built on `@vis.gl` that auto-tracks the user's location. It visually plots verified civic issues across the city using custom UI markers, allowing users to instantly see the health of their neighborhood.
-* 🎮 **Civic Gamification & Bounties**: Users earn **Bounty Points (BP)** and increase their **Civic Trust Score** for reporting and verifying real issues. Highly trusted users appear on the 10km Proximity Leaderboard and unlock exclusive profile cosmetics.
-* 🧠 **Predictive AI Insights**: Solvuno doesn't just collect data; it analyzes it. A dedicated Insights Dashboard uses generative AI to analyze city-wide trends, predicting infrastructure failures and providing automated, actionable reports for city planners.
+### 🎮 Civic Gamification & Community Verification
+To ensure high-quality data and incentivize active citizenship, Solvuno employs a robust gamification and crowd-sourced verification loop:
+
+* **Bounty Points (BP) & Leaderboards**: Users earn BP for reporting legitimate issues and contributing to the platform. Highly active users climb the **10km Proximity Leaderboard**, competing against neighbors to become the top civic contributor in their local radius.
+* **Civic Bounty Shop**: Users can spend their hard-earned BP in the integrated Bounty Shop to unlock exclusive profile cosmetics, such as glowing avatar borders and unique civic titles (e.g., "Neighborhood Watch" or "Pothole Patrol").
+* **Community Upvote / Downvote**: Once an issue is reported, local residents can Upvote it to confirm its existence or Downvote it if it is resolved or fraudulent. This creates a self-moderating ecosystem where the community crowdsources ground-truth verification.
+* **Verify Fix Mechanism**: When a reported issue is marked as "Resolved" (e.g., a pothole is filled), the original reporter or community members can submit a "Verify Fix". This officially closes the issue loop, granting bonus BP to users who verify the resolution and cleaning up the live map.
+* **Predictive AI Insights**: Solvuno doesn't just collect data; it analyzes it. A dedicated Insights Dashboard uses generative AI to analyze city-wide trends, predicting infrastructure failures and providing automated, actionable reports for city planners.
 * ⚡ **True Real-Time Location**: A custom-built geolocation engine bypasses common browser tracking bugs by polling raw GPS data, falling back to IP-based location estimation if hardware GPS is unavailable.
 
 ---
