@@ -1,0 +1,20 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Credentials & Secrets
+*.pem
+*.key
+*.cert
+*.p12
+*.pfx
+google-services.json
+GoogleService-Info.plist
+firebase-debug.log
+.firebase/
+.firebaserc

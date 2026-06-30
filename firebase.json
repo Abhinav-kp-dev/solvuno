@@ -1,0 +1,15 @@
+{
+  "firestore": {
+    "databaseId": "ai-studio-solvuno-90d246bc-d3ff-4053-ac19-a0b142676ebe",
+    "rules": "firestore.rules",
+    "edition": "ENTERPRISE",
+    "dataAccessMode": "FIRESTORE_NATIVE"
+  },
+  "auth": {
+    "authorizedDomains": [
+      "localhost",
+      "127.0.0.1",
+      "outstanding-crane-z4dh4.firebaseapp.com"
+    ]
+  }
+}

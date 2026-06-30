@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+
+  --color-civic-bg: #f0efe9;
+  --color-civic-ink: #0f1117;
+  --color-civic-accent: #1a6b3a;
+  --color-civic-accent2: #e8622a;
+  --color-civic-surface: #fafaf7;
+  --color-civic-border: #dddbd3;
+  --color-civic-muted: #7a7870;
+}
+
+.dark {
+  --color-civic-bg: #0a0a0a;
+  --color-civic-ink: #ffffff;
+  --color-civic-surface: #1e1e1e;
+  --color-civic-border: #27272a;
+  --color-civic-muted: #a1a1aa;
+}
+
+/* ── Scrollbar ─────────────────────────────────────── */
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar { width: 0px; }
+  .custom-scrollbar { scrollbar-width: none; }
+}
+
+/* ── GPS Marker ─────────────────────────────────────── */
+@keyframes gps-ring {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+@keyframes gps-dot-breathe {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(26, 107, 58, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(26, 107, 58, 0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-slide-up { animation: slide-up 0.4s ease both; }
+.animate-fade-in  { animation: fade-in 0.3s ease both; }
+
+.user-location-marker {
+  display: flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px; position: relative;
+}
+.user-location-marker .dot {
+  width: 14px; height: 14px;
+  background: #1a6b3a; border: 2.5px solid #fff; border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(26,107,58,0.5);
+  position: relative; z-index: 2;
+  animation: gps-dot-breathe 2s ease-in-out infinite;
+}
+.user-location-marker .ring {
+  position: absolute; inset: 0; border-radius: 50%;
+  background: rgba(26,107,58,0.3);
+  animation: gps-ring 1.8s ease-out infinite; z-index: 1;
+}
+.user-location-marker .ring-2 { animation-delay: 0.9s; }
+
+/* ── Skeleton shimmer ─────────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg, #e8e7e1 25%, #f0efe9 50%, #e8e7e1 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ── Civic card hover ─────────────────────────────── */
+.civic-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.civic-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15,17,23,0.08);
+}
+
+/* ── Stat glow ─────────────────────────────────────── */
+.stat-accent { animation: pulse-glow 3s ease infinite; }
+
+/* ── Nav pill ──────────────────────────────────────── */
+.nav-pill {
+  backdrop-filter: blur(20px);
+  background: rgba(250,250,247,0.92);
+}
+
+/* ── Progress bar ──────────────────────────────────── */
+.progress-bar {
+  height: 3px;
+  background: linear-gradient(90deg, #1a6b3a, #2d9552);
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+/* ── Badge gradient ─────────────────────────────────── */
+.badge-champion {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  color: white;
+}
+.badge-advocate  { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; }
+.badge-defender  { background: linear-gradient(135deg, #0ea5e9, #06b6d4); color: white; }
+.badge-scout     { background: linear-gradient(135deg, #10b981, #1a6b3a); color: white; }
+
+/* ── Heatmap intensity ──────────────────────────────── */
+.heat-0 { background: #fef3c7; }
+.heat-1 { background: #fde68a; }
+.heat-2 { background: #fbbf24; }
+.heat-3 { background: #f97316; }
+.heat-4 { background: #ef4444; }
+
+/* ── Issue type chip ─────────────────────────────────── */
+.chip-pothole     { background: #fee2e2; color: #b91c1c; border-color: #fca5a5; }
+.chip-streetlight { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+.chip-water       { background: #dbeafe; color: #1e40af; border-color: #93c5fd; }
+.chip-public_works{ background: #ede9fe; color: #5b21b6; border-color: #c4b5fd; }
+.chip-other       { background: #f1f5f9; color: #475569; border-color: #cbd5e1; }
