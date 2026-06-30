@@ -44,6 +44,6 @@ We built Solvuno with a modern, highly scalable architecture tailored for perfor
 3. **Flawless Execution**: From the custom geolocation fallback protocols to the enterprise-grade Google Cloud deployment and premium glassmorphic UI, Solvuno is built like a production-ready startup, not just a weekend hack.
 
 ---
-
+🚨 Automated Emergency Escalation: When a reported issue receives high community upvotes and is flagged as 'high severity' by the AI, the system automatically escalates the issue to local authorities. (Currently mocked via simulated terminal dispatches for the hackathon).
 ### What's Next?
 In the future, we plan to integrate direct API webhooks to municipal ticketing systems (like Salesforce or Jira) so verified Solvuno reports automatically generate work orders for city maintenance crews.
