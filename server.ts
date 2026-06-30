@@ -86,7 +86,7 @@ const Message = mongoose.model("Message", messageSchema);
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = process.env.PORT || 3000;
 
   // Initialize MongoDB
   if (process.env.MONGODB_URI) {
